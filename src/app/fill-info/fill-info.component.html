@@ -1,0 +1,44 @@
+<mat-card>
+    <h4>{{ childSocialInfoObj.name }}</h4>
+        <img src="{{ childSocialInfoObj.photoUrl }}">
+        <p>{{ childSocialInfoObj.email }}</p>
+
+        <h4>Kindly help us with the following information</h4>
+    <form class="example-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        
+
+        <mat-form-field class="example-full-width input-box-size" appearance="fill">
+            <mat-label>Full Name</mat-label>
+            <input type="text" matInput formControlName="name" placeholder="Ex. Sunil">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width input-box-size" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width input-box-size" appearance="fill">
+            <mat-label>Mobile Number</mat-label>
+            <input type="text" matInput formControlName="mobilenumber" maxlength="10" placeholder="Ex. 9967171901">
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Nationality</mat-label>
+            <mat-select formControlName="nationality">
+                <mat-option value="1">Indian</mat-option>
+                <mat-option value="2">Austrian</mat-option>
+                <mat-option value="3">American</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br>
+        <input id="fileInput" formControlName="filename" type="file" class="ng-hide" multiple>
+        <br>
+        <button mat-raised-button color="primary">Submit</button>
+
+    </form>
+
+</mat-card>
