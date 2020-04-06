@@ -10,6 +10,10 @@ export class InfoserviceService {
   constructor(private http: HttpClient) { }
 
   insertInfo(infodata) {
-    this.http.post('http://localhost:3000/fileInfo', infodata);
+    console.log('before post');
+    console.log(infodata);
+    
+    return this.http.post('http://localhost:3000/fileInfo', infodata);
+    
   }
 }

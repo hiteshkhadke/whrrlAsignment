@@ -26,7 +26,9 @@ export class FillInfoComponent implements OnInit {
 
   onSubmit () {
     console.log(this.profileForm.value);
-    this.infoService.insertInfo(this.profileForm.value);
+    this.infoService.insertInfo(this.profileForm.value).subscribe(repos => {
+  		console.log(repos);
+  	});
   }
 
 }
